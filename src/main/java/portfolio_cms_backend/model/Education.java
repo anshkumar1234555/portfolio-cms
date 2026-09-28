@@ -1,0 +1,92 @@
+package portfolio_cms_backend.model;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "education")
+public class Education {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String degree;
+
+    @Column(nullable = false)
+    private String institution;
+
+    @Column(nullable = false)
+    private String startYear;
+
+    @Column(nullable = false)
+    private String endYear;
+
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
+    public Education() {
+    }
+
+    public Education(
+            String degree,
+            String institution,
+            String startYear,
+            String endYear,
+            String description) {
+
+        this.degree = degree;
+        this.institution = institution;
+        this.startYear = startYear;
+        this.endYear = endYear;
+        this.description = description;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getDegree() {
+        return degree;
+    }
+
+    public void setDegree(String degree) {
+        this.degree = degree;
+    }
+
+    public String getInstitution() {
+        return institution;
+    }
+
+    public void setInstitution(String institution) {
+        this.institution = institution;
+    }
+
+    public String getStartYear() {
+        return startYear;
+    }
+
+    public void setStartYear(String startYear) {
+        this.startYear = startYear;
+    }
+
+    public String getEndYear() {
+        return endYear;
+    }
+
+    public void setEndYear(String endYear) {
+        this.endYear = endYear;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+}
